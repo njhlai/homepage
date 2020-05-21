@@ -5,6 +5,11 @@
 ## About
 This project started off as a copy of [Jaredk3nt/homepage](https://github.com/Jaredk3nt/homepage), modified to my own personal preference. Then, heavily inspired by [deepjyoti30/startpage](https://github.com/deepjyoti30/startpage/), as a practice in TypeScript, and sheer boredom, this project is finally in its current form.
 
+### Shoutout
+The code for this project is modified heavily from:
+- [Jaredk3nt/homepage](https://github.com/Jaredk3nt/homepage): Providing the base look of the page
+- [deepjyoti30/startpage](https://github.com/deepjyoti30/startpage/): Providing the base for chrome extension
+
 ## Installation
 Currently, this is only available on chrome.
 
@@ -24,12 +29,12 @@ Currently, this is only available on chrome.
 Here is a guide to the writing your ```config.json```.
 
 ### squares
-This is a list of ```squares```, which is essentially a collection of links group by its title, which are of the form
-```JSON
-    { 
-		"title": //title of square, 
-		"color": //hexcode of color of the title, 
-		"links": [//list of links//]
+This is a list of ```square```, which is essentially a collection of links group by its title, which are of the form
+```javascript
+	{ 
+		"title": /*title of square*/, 
+		"color": /*hexcode of color of title*/, 
+		"links": [/*list of links*/]
 	}
 ```
 
@@ -41,21 +46,21 @@ A ```boolean``` which indicates geolocation. No feature currently associated to 
 
 ### timeConf
 This is a ```JSON``` of the form
-```JSON
-    { 
-		"enableDate": //boolean for date display, 
-		"locale": //string of date-time locale, 
-		"options": //Intl.dateTimeFormatOptions for additional options
+```javascript
+	{ 
+		"enableDate": /*boolean for date display*/, 
+		"locale": /*string of date-time locale*/, 
+		"options": /*Intl.dateTimeFormatOptions for additional options*/
 	}
 ```
 
 ### weatherConf
 This is a ```JSON``` of the form
-```JSON
-    { 
-		"lat": //lattitude,
-		"lon": //longtitude",
-		"units": //metric or imperial unit,
-		"appid": //appid of openweathermap.org
+```javascript
+	{ 
+		"lat": /*string for lattitude*/,
+		"lon": /*string for longtitude*/,
+		"units": /*metric or imperial unit*/,
+		"appid": /*appid of openweathermap.org*/
 	}
 ```
