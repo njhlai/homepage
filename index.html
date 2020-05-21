@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <title>Home</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <div id="search">
+            <input id="search-field" type="text" name="search-field"/>
+        </div>
+        <div class="container">
+            <div class="time-display" id="calendar"></div>
+            <div class="time-display" id="clock"></div>
+            <div class="weather-container">
+                <div class="row">
+                    <div id="weather-description" class="inline"></div>
+                    <div class="inline">-</div>
+                    <div id="temp" class="inline"></div>
+                </div>
+            </div>
+            <div class="bookmark-container" id="thelist"></div>
+        </div>
+
+        <!-- custom JS -->
+        <script type="module" src="js/main.js"></script>
+
+        <!-- template -->
+        <template id="bookmarkTemplate">
+            <link rel="Stylesheet" href="css/styles.css">
+            <div class="bookmark-set">
+                <div class="bookmark-title"><slot name="bookmark-title">Square</slot></div>
+                <div class="bookmark-inner-container"><slot name="bookmark-inner-container"></slot></div>
+            </div>
+        </template>
+    </body>
+</html>

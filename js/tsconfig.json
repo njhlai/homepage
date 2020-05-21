@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "strict": true
+    },
+    "files": [
+        "dataStructs.ts",
+        "main.ts"
+    ]
+}

@@ -1,0 +1,72 @@
+{
+	"squares": [
+		{ 
+			"title" : "Media", 
+			"color": "#4dd0e1", 
+			"links": [
+				{ 
+					"name": "Spotify", 
+					"url": "https://open.spotify.com/" 
+				},
+				{ 
+					"name": "YoutubeMusic", 
+					"url": "https://music.youtube.com/" 
+				},
+				{ 
+					"name": "Netflix", 
+					"url": "https://netflix.com" 
+				},
+				{ 
+					"name": "Youtube", 
+					"url": "https://youtube.com" 
+				}
+			]
+		},
+		{ 
+			"title": "Dev", 
+			"color": "#f06292", 
+			"links": [
+				{ 
+					"name": "GitHub", 
+					"url": "https://github.com/" 
+				},
+				{ 
+					"name": "GitLab", 
+					"url": "https://gitlab.com/" 
+				},
+				{ 
+					"name": "LocalHost", 
+					"url": "localhost:8000" 
+				}
+			]
+		},
+		{ 
+			"title": "Template", 
+			"color": "#fff", 
+			"links": [
+				{ 
+					"name": "Google", 
+					"url": "https://google.com/" 
+				}
+			]
+		}
+	],
+	"searchEngine":"https://www.google.com/search?q=",
+	"timeConf": { 
+		"enableDate": true, 
+		"locale": "en-US", 
+		"options": { 
+			"weekday": "long", 
+			"year": "numeric", 
+			"month": "long", 
+			"day": "numeric" 
+		} 
+	},
+	"enableLocation": false,
+	"weatherConf": {
+		"lat": "90",
+		"lon": "135",
+		"units": "metric",
+		"appid": ""
+	}
+}
