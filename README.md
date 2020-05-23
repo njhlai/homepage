@@ -1,4 +1,4 @@
-# Minimal-Homepage
+# Minimal-Dark-Homepage
 
 <img src=".github/captured.gif">
 

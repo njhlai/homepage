@@ -1,4 +1,5 @@
-import {linkEntry, square, option, timeData, weatherData, configData, bookmarkSet} from './dataStructs.js'
+import {weatherData, configData} from './types/configDataStructs';
+import {bookmarkSet} from './bookmarkSet.js';
 
 let searchField = document.getElementById('search-field')! as HTMLInputElement;
 let searcher = document.getElementById('search')! as HTMLElement;
@@ -7,6 +8,9 @@ let clock = document.getElementById('clock')! as HTMLElement;
 let temp = document.getElementById('temp')! as HTMLElement;
 let weatherDesc = document.getElementById('weather-description')! as HTMLElement;
 let listEl = document.querySelector('#thelist')! as HTMLElement;
+
+// define custom element <bookmark-set>
+customElements.define('bookmark-set', bookmarkSet);
 
 // Event listener to open search
 document.addEventListener('keydown', function(event)  {
@@ -29,7 +33,7 @@ document.addEventListener('keydown', function(event)  {
 searchField.addEventListener('keypress', function(event)  {
     if (event.keyCode == 13) {
         var val = searchField.value;
-        window.open("https://google.com/search?q=" + val);
+        window.location.href = "https://google.com/search?q=" + val;
 
         // close search
         searchField.value = '';
@@ -51,7 +55,6 @@ function getTime() {
 }
 
 // Get weather information
-// TODO: how to fix location access issue?
 function displayWeather(weatherConf: weatherData) {
     let xhr = new XMLHttpRequest();
 
@@ -104,6 +107,9 @@ function readJSON(fileName: string) {
         .then(configJSON => {
             parseAndCreate(configJSON);
             // localStorage.setItem('confData',JSON.stringify(configJSON));
+        })
+        .catch((error) => {
+            console.error('Error:', error);
         });
 }
 

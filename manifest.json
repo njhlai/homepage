@@ -1,6 +1,6 @@
 {
 	"manifest_version": 2,
-	"name": "minimal-homepage",
+	"name": "minimal-dark-homepage",
 	"short_name": "homepage",
 	"version": "1.0",
 	"description": "Overrides the browsers newtab page with a custom homepage.",
