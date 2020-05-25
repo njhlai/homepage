@@ -1,4 +1,9 @@
-import {linkEntry, square, option, timeData, weatherData, configData} from './types/configDataStructs'
+// Type definitions for bookmarkSet
+// Project: homepage
+// Definitions by: njhlai
+
+// import required interfaces
+import {linkEntry, square} from './configDataStructs.js'
 
 export class bookmarkSet extends HTMLElement {
     constructor(data?: square) {
@@ -27,7 +32,7 @@ export class bookmarkSet extends HTMLElement {
                 });
 
                 for (let link of data!.links) {
-                    const url = document.createElement('a');
+                    let url = document.createElement('a');
                     url.classList.add('bookmark');
                     url.append(link.name);
                     url.href = link.url;

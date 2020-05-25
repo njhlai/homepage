@@ -1,6 +1,14 @@
-import {weatherData, configData} from './types/configDataStructs';
-import {bookmarkSet} from './bookmarkSet.js';
+// main.ts: Main TypeScript file, containing all the onload logic
+// Project: homepage
+// by: njhlai
 
+// import required interfaces
+import {weatherData, configData} from './types/configDataStructs.js';
+
+// import require classes
+import {bookmarkSet} from './types/bookmarkSet.js';
+
+// grab required HTMLElements
 let searchField = document.getElementById('search-field')! as HTMLInputElement;
 let searcher = document.getElementById('search')! as HTMLElement;
 let calendar = document.getElementById('calendar')! as HTMLElement;
@@ -74,6 +82,7 @@ function displayWeather(weatherConf: weatherData) {
     xhr.send();
 }
 
+// Parse and create page
 function parseAndCreate(confData: configData) {
     // Set the date
     if (confData.timeConf.enableDate) {
@@ -98,6 +107,7 @@ function parseAndCreate(confData: configData) {
     }
 }
 
+// Read config files (in JSON)
 function readJSON(fileName: string) {
     console.log("Initialising first read");
 
@@ -106,7 +116,7 @@ function readJSON(fileName: string) {
         .then(response => { return response.json(); })
         .then(configJSON => {
             parseAndCreate(configJSON);
-            // localStorage.setItem('confData',JSON.stringify(configJSON));
+            localStorage.setItem('confData',JSON.stringify(configJSON));
         })
         .catch((error) => {
             console.error('Error:', error);
@@ -118,5 +128,5 @@ window.onload = () => {
 
     // Load body
     readJSON('config.json');
-    // localData? parseAndCreate(JSON.parse(localData)) : readJSON('config.json');
+    localData? parseAndCreate(JSON.parse(localData)) : readJSON('config.json');
 }
