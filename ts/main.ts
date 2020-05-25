@@ -127,6 +127,5 @@ window.onload = () => {
     let localData = localStorage.getItem('confData');
 
     // Load body
-    readJSON('config.json');
     localData? parseAndCreate(JSON.parse(localData)) : readJSON('config.json');
 }
