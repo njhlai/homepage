@@ -15,18 +15,18 @@ Currently, this is only available on chrome.
 
 ### Chrome
 - Get the latest release (zip) or clone this repo and extract it.
-- Write the ```config.json``` for the configuration of the homepage, based on the template provided in  [config_template.json](https://github.com/njhlai/homepage/blob/master/config_template.json).
+- Write the ```config.json``` for the configuration of the homepage, based on the template provided in  [config.json](https://github.com/njhlai/homepage/blob/master/config.json).
 - Add an ```icon.png``` of your choice into ```img/```.
-- Compile the TypeScripts in ```js/``` by running
+- Compile the TypeScripts in ```ts/``` by running
     ```shell-script
-        > cd js/
+        > cd ts/
         > tsc
     ```
 - On chrome, open extensions from the tool menu or open it from [chrome://extensions](chrome://extensions).
 - Click on load unpacked, navigate to the directory where you cloned the repo and select it.
 
 ## Settings
-Here is a guide to the writing your ```config.json```.
+Here is a guide to writing your own ```config.json```.
 
 ### squares
 This is a list of ```square```, which is essentially a collection of links group by its title, which are of the form

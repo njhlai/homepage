@@ -3,7 +3,7 @@
 	"name": "minimal-dark-homepage",
 	"short_name": "homepage",
 	"version": "1.0",
-	"description": "Overrides the browsers newtab page with a custom homepage.",
+	"description": "Overrides the browser's newtab page with a custom homepage.",
 	"author": "njhlai",
 	"icons": {
 		"64": "img/icon.png"
