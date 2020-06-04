@@ -116,7 +116,7 @@ function readJSON(fileName: string) {
         .then(response => { return response.json(); })
         .then(configJSON => {
             parseAndCreate(configJSON);
-            localStorage.setItem('confData',JSON.stringify(configJSON));
+            sessionStorage.setItem('confData', JSON.stringify(configJSON));
         })
         .catch((error) => {
             console.error('Error:', error);
@@ -124,8 +124,6 @@ function readJSON(fileName: string) {
 }
 
 window.onload = () => {
-    let localData = localStorage.getItem('confData');
-
-    // Load body
-    localData? parseAndCreate(JSON.parse(localData)) : readJSON('config.json');
+    let sessionData = sessionStorage.getItem('confData');
+    sessionData? parseAndCreate(JSON.parse(sessionData)) : readJSON('config.json');
 }
