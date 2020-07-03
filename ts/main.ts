@@ -20,6 +20,9 @@ let listEl = document.querySelector('#thelist')! as HTMLElement;
 // define custom element <bookmark-set>
 customElements.define('bookmark-set', bookmarkSet);
 
+const ignoreKeys = new Set(['Meta', 'Control', 'Shift', 'Alt']);
+let ignore = false;
+
 // Event listener to open search
 document.addEventListener('keydown', function(event)  {
     if (event.keyCode == 27) {   
@@ -29,12 +32,18 @@ document.addEventListener('keydown', function(event)  {
         searcher.style.display = 'none';
     } else {
         var inp = String.fromCharCode(event.keyCode);
-        if (/[a-zA-Z0-9-_ ]/.test(inp)) {  
+        ignore = ignore || ignoreKeys.has(event.key);
+        console.log(ignore);
+        if (/[a-zA-Z0-9-_ ]/.test(inp) && !ignore) {  
             // detect typing to open search
             searcher.style.display = 'flex';
             searchField.focus();
         }
     }
+});
+
+document.addEventListener('keyup', function(event)  {
+    ignore = false;
 });
 
 // Search on enter key event
