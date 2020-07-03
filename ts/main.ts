@@ -33,7 +33,6 @@ document.addEventListener('keydown', function(event)  {
     } else {
         var inp = String.fromCharCode(event.keyCode);
         ignore = ignore || ignoreKeys.has(event.key);
-        console.log(ignore);
         if (/[a-zA-Z0-9-_ ]/.test(inp) && !ignore) {  
             // detect typing to open search
             searcher.style.display = 'flex';
