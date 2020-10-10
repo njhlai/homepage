@@ -20,7 +20,7 @@ let listEl = document.querySelector('#thelist')! as HTMLElement;
 // define custom element <bookmark-set>
 customElements.define('bookmark-set', bookmarkSet);
 
-const ignoreKeys = new Set(['Meta', 'Control', 'Shift', 'Alt']);
+const ignoreKeys = new Set(['Meta', 'Control', 'Alt']);
 let ignore = false;
 
 // Event listener to open search

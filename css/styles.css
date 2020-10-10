@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap");
 
 body {
     background-color: #101010;
@@ -32,30 +33,45 @@ body {
 }
 
 #search {
+    font-family: "Fira Code", monospace;
+    font-size: 2rem;
+    color: #fa8072;
     width: 100%;
     height: 100vh;
     background-color: #212121;
     display: none;
     position: absolute;
     box-sizing: border-box;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
+.prompt {
+    color: #282a36;
+    background: #bd93f9;
+    padding: 0px 10px;
+    margin: 0em 0.5em;
+}
+
+#arrowimg {
+  margin-bottom: -2px;
+  padding-left: 0.5em;
+  height: 32px;
+  width: 32px;
+}
+
 #search-field {
+    font-family: "Fira Code", monospace;
+    font-size: 2rem;
     width: 90%;
-    padding: .75em 1em;
+    padding: 0em 0.5em;
     box-sizing: border-box;
     background-color: #212121;
     border: solid 0px #212121;
-    font-family: "Roboto Mono";
-    font-size: 4rem;
     color: #f2f2f2;
     outline: none;
     border-radius: 3px;
-    margin-bottom: 1em;
-    text-align: center;
 }
 
 .weather-container {
@@ -111,7 +127,7 @@ bookmark-set {
 
 .bookmark-inner-container {
     /* turn this on if you want scroll */
-        /*overflow-y: scroll;*/
+    /*overflow-y: scroll;*/
     height: 80%;
     vertical-align: top;
 }
