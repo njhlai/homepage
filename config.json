@@ -1,4 +1,5 @@
 {
+	"username": "YourName",
 	"squares": [
 		{ 
 			"title" : "Media", 
@@ -51,7 +52,16 @@
 			]
 		}
 	],
-	"searchEngine":"https://www.google.com/search?q=",
+	"searchEngines": [
+		{
+			"engine": "Google",
+			"query": "https://www.google.com/search?q="
+		},
+		{
+			"engine": "DuckDuckGo",
+			"query": "https://duckduckgo.com/?q="
+		}
+	],
 	"timeConf": { 
 		"enableDate": true, 
 		"locale": "en-US", 

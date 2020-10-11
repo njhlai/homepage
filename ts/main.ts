@@ -3,7 +3,7 @@
 // by: njhlai
 
 // import required interfaces
-import {weatherData, configData} from './types/configDataStructs.js';
+import {weatherData, searchEngine, configData} from './types/configDataStructs.js';
 
 // import require classes
 import {bookmarkSet} from './types/bookmarkSet.js';
@@ -11,6 +11,8 @@ import {bookmarkSet} from './types/bookmarkSet.js';
 // grab required HTMLElements
 let searchField = document.getElementById('search-field')! as HTMLInputElement;
 let searcher = document.getElementById('search')! as HTMLElement;
+let searchprompt = document.getElementById('prompt')! as HTMLElement;
+let searchdirectory = document.getElementById('directory')! as HTMLElement;
 let calendar = document.getElementById('calendar')! as HTMLElement;
 let clock = document.getElementById('clock')! as HTMLElement;
 let temp = document.getElementById('temp')! as HTMLElement;
@@ -20,7 +22,7 @@ let listEl = document.querySelector('#thelist')! as HTMLElement;
 // define custom element <bookmark-set>
 customElements.define('bookmark-set', bookmarkSet);
 
-const ignoreKeys = new Set(['Meta', 'Control', 'Alt']);
+var ignoreKeys = new Set(['Meta', 'Control', 'Alt']);
 let ignore = false;
 
 // Event listener to open search
@@ -45,18 +47,29 @@ document.addEventListener('keyup', function(event)  {
     ignore = false;
 });
 
-// Search on enter key event
-searchField.addEventListener('keypress', function(event)  {
-    if (event.keyCode == 13) {
-        var val = searchField.value;
-        window.location.href = "https://google.com/search?q=" + val;
+// Prepare search engine
+function initSearchEngine(username: string, searchEngines: searchEngine[]) {
+    let defaultEngine = searchEngines[0];
 
-        // close search
-        searchField.value = '';
-        searchField.blur();
-        searcher.style.display = 'none';
-    }
-});
+    // Set up the prompt
+    searchprompt.innerHTML = username + '@Homepage';
+
+    // Set up the directory
+    searchdirectory.innerHTML = '~/browser/search/' + defaultEngine.engine;
+
+    // Search on enter key event
+    searchField.addEventListener('keypress', function(event)  {
+        if (event.keyCode == 13) {
+            var val = searchField.value;
+            window.location.href = defaultEngine.query + val;
+
+            // close search
+            searchField.value = '';
+            searchField.blur();
+            searcher.style.display = 'none';
+        }
+    });
+}
 
 // Get current time and format
 function getTime() {
@@ -113,6 +126,9 @@ function parseAndCreate(confData: configData) {
     for (let row of confData.squares) {
         listEl.append(new bookmarkSet(row));
     }
+
+    // initialise search engine
+    initSearchEngine(confData.username, confData.searchEngines);
 }
 
 // Read config files (in JSON)

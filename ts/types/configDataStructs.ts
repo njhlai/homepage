@@ -33,9 +33,15 @@ export interface weatherData {
     appid: string;
 }
 
+export interface searchEngine {
+    engine: string;
+    query: string;
+}
+
 export interface configData {
+    username: string;
 	squares: square[];
-	searchEngine: string;
+	searchEngines: searchEngine[];
     enableLocation: boolean;
 	timeConf: timeData;
 	weatherConf: weatherData;
