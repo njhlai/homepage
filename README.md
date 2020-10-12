@@ -38,8 +38,8 @@ This is a list of ```square```, which is essentially a collection of links group
 	}
 ```
 
-### searchEngine
-A ```string``` which is the query url for your search engine of choice. The search querry will be appended to the end of this string during search.
+### searchEngines
+A list of your search engines of choice. Each item consists of the name of the engine to be displayed in the search UI, and the query url. The search querry will be appended to the end of this string during search. Pressing CTRL + Q will cycle through the search engines in this list.
 
 ### enableLocation
 A ```boolean``` which indicates geolocation. No feature currently associated to this ```boolean```.

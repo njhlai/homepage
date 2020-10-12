@@ -22,19 +22,25 @@ let listEl = document.querySelector('#thelist')! as HTMLElement;
 // define custom element <bookmark-set>
 customElements.define('bookmark-set', bookmarkSet);
 
-var ignoreKeys = new Set(['Meta', 'Control', 'Alt']);
+// all other required glabal variables
 let ignore = false;
+var engines: searchEngine[] = [];
 
-// Event listener to open search
+// Event listener to open search/change search engine
 document.addEventListener('keydown', function(event)  {
     if (event.keyCode == 27) {   
         // Esc to close search
         searchField.value = '';
         searchField.blur();
         searcher.style.display = 'none';
+    } else if (event.ctrlKey && event.key == 'q') {
+        engines.push(engines.shift()!);
+
+        // update search directory
+        searchdirectory.innerHTML = '~/browser/search/' + engines[0].engine;
     } else {
         var inp = String.fromCharCode(event.keyCode);
-        ignore = ignore || ignoreKeys.has(event.key);
+        ignore = ignore || event.altKey || event.ctrlKey || event.metaKey;
         if (/[a-zA-Z0-9-_ ]/.test(inp) && !ignore) {  
             // detect typing to open search
             searcher.style.display = 'flex';
@@ -47,29 +53,18 @@ document.addEventListener('keyup', function(event)  {
     ignore = false;
 });
 
-// Prepare search engine
-function initSearchEngine(username: string, searchEngines: searchEngine[]) {
-    let defaultEngine = searchEngines[0];
+// Search on enter key event
+searchField.addEventListener('keypress', function(event)  {
+    if (event.keyCode == 13) {
+        var val = searchField.value;
+        window.location.href = engines[0].query + val;
 
-    // Set up the prompt
-    searchprompt.innerHTML = username + '@Homepage';
-
-    // Set up the directory
-    searchdirectory.innerHTML = '~/browser/search/' + defaultEngine.engine;
-
-    // Search on enter key event
-    searchField.addEventListener('keypress', function(event)  {
-        if (event.keyCode == 13) {
-            var val = searchField.value;
-            window.location.href = defaultEngine.query + val;
-
-            // close search
-            searchField.value = '';
-            searchField.blur();
-            searcher.style.display = 'none';
-        }
-    });
-}
+        // close search
+        searchField.value = '';
+        searchField.blur();
+        searcher.style.display = 'none';
+    }
+});
 
 // Get current time and format
 function getTime() {
@@ -127,8 +122,14 @@ function parseAndCreate(confData: configData) {
         listEl.append(new bookmarkSet(row));
     }
 
-    // initialise search engine
-    initSearchEngine(confData.username, confData.searchEngines);
+    // Set up the search prompt
+    searchprompt.innerHTML = confData.username + '@Homepage';
+
+    // Set list of search engines
+    engines = confData.searchEngines;
+
+    // Set search directory
+    searchdirectory.innerHTML = '~/browser/search/' + engines[0].engine;
 }
 
 // Read config files (in JSON)
