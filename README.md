@@ -28,6 +28,9 @@ Currently, this is only available on chrome.
 ## Settings
 Here is a guide to writing your own ```config.json```.
 
+### username
+Your display name. This is used in the search UI.
+
 ### squares
 This is a list of ```square```, which is essentially a collection of links group by its title, which are of the form
 ```javascript
@@ -39,7 +42,14 @@ This is a list of ```square```, which is essentially a collection of links group
 ```
 
 ### searchEngines
-A list of your search engines of choice. Each item consists of the name of the engine to be displayed in the search UI, and the query url. The search querry will be appended to the end of this string during search. Pressing CTRL + Q will cycle through the search engines in this list.
+A list of your search engines of choice. Each search engine item to be displayed in the search UI is of the form
+```javascript
+	{ 
+		"engine": /*name of serach engine*/, 
+		"query": /*query url*/
+	}
+```
+The search querry will be appended to the end of query url during search. Pressing CTRL + Q will cycle through the search engines in this list.
 
 ### enableLocation
 A ```boolean``` which indicates geolocation. No feature currently associated to this ```boolean```.
