@@ -33,7 +33,7 @@ document.addEventListener('keydown', function(event)  {
         searchField.value = '';
         searchField.blur();
         searcher.style.display = 'none';
-    } else if (event.ctrlKey && event.key == 'q') {
+    } else if (event.keyCode == 9) {
         engines.push(engines.shift()!);
 
         // update search directory

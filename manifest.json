@@ -6,7 +6,7 @@
 	"description": "Overrides the browser's newtab page with a custom homepage.",
 	"author": "njhlai",
 	"icons": {
-		"64": "img/icon.png"
+		"64": "img/128.png"
 	},
 	"chrome_url_overrides": {
 		"newtab": "index.html"

@@ -49,7 +49,7 @@ A list of your search engines of choice. Each search engine item to be displayed
 		"query": /*query url*/
 	}
 ```
-The search querry will be appended to the end of query url during search. Pressing CTRL + Q will cycle through the search engines in this list.
+The search querry will be appended to the end of query url during search. Pressing TAB will cycle through the search engines in this list.
 
 ### enableLocation
 A ```boolean``` which indicates geolocation. No feature currently associated to this ```boolean```.
