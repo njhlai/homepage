@@ -1,6 +1,6 @@
 # Minimal-Dark-Homepage
 
-<img src=".github/captured.gif">
+![preview](.github/captured.gif)
 
 ## About
 This project started off as a copy of [Jaredk3nt/homepage](https://github.com/Jaredk3nt/homepage), modified to my own personal preference. Then, heavily inspired by [deepjyoti30/startpage](https://github.com/deepjyoti30/startpage/), as a practice in TypeScript, and sheer boredom, this project is finally in its current form.
@@ -15,7 +15,7 @@ Currently, this is only available on chrome.
 
 ### Chrome
 - Get the latest release (zip) or clone this repo and extract it.
-- Write the ```config.json``` for the configuration of the homepage, based on the template provided in  [config.json](https://github.com/njhlai/homepage/blob/master/config.json).
+- Write the ```config.json``` for the configuration of the homepage, based on the template provided in  [sample_config.json](https://github.com/njhlai/homepage/blob/master/sample_config.json).
 - Add an ```icon.png``` of your choice into ```img/```.
 - Compile the TypeScripts in ```ts/``` by running
     ```shell-script
