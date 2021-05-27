@@ -11,19 +11,36 @@ The code for this project is modified heavily from:
 - [deepjyoti30/startpage](https://github.com/deepjyoti30/startpage/): Providing the base for chrome extension
 
 ## Installation
-Currently, this is only available on chrome.
+You can install this both on Chrome and Firefox (requires [web-ext](https://github.com/mozilla/web-ext)).
 
 ### Chrome
 - Get the latest release (zip) or clone this repo and extract it.
 - Write the ```config.json``` for the configuration of the homepage, based on the template provided in  [sample_config.json](https://github.com/njhlai/homepage/blob/master/sample_config.json).
 - Add an ```icon.png``` of your choice into ```img/```.
 - Compile the TypeScripts in ```ts/``` by running
-    ```shell-script
-        > cd ts/
-        > tsc
-    ```
+	```shell-script
+		> cd ts/
+		> tsc
+	```
 - On chrome, open extensions from the tool menu or open it from [chrome://extensions](chrome://extensions).
 - Click on load unpacked, navigate to the directory where you cloned the repo and select it.
+
+### Firefox
+- Get the latest release (zip) or clone this repo and extract it.
+- Write the ```config.json``` for the configuration of the homepage, based on the template provided in  [sample_config.json](https://github.com/njhlai/homepage/blob/master/sample_config.json).
+- Add an ```icon.png``` of your choice into ```img/```.
+- Compile the TypeScripts in ```ts/``` by running
+	```shell-script
+		> cd ts/
+		> tsc
+	```
+- Build using ```web-ext```:
+	```shell-script
+		> web-ext build --ignore-files ts/ sample_config.json README.md
+	```
+	This will create a zip file in ```web-ext-artifacts/```.
+- You can now load this by navigating to the [about:debugging](about:debugging), click on "This Firefox", click on "Load Temporary Add-on..." and select the zip file from the step before, in ```web-ext-artifacts/```. This will load the extension for the current session only.
+- To have this more permenantly, you'll need to sign it using ```web-ext```. See [here](https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/#using-web-ext-section).
 
 ## Settings
 Here is a guide to writing your own ```config.json```.
