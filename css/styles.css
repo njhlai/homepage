@@ -2,85 +2,85 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap");
 
 body {
-    background-color: #212121;
-    margin: 0px;
+	background-color: #212121;
+	margin: 0px;
 }
 
 .container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 
 .display {
-    font-family: "Roboto Mono";
-    color: #fff;
-    margin-bottom: .25em;
+	font-family: "Roboto Mono";
+	color: #fff;
+	margin-bottom: .25em;
 }
 
 #calendar {
-    font-size: 1.5rem;
-    font-weight: 400;
-    visibility: collapse;
+	font-size: 1.5rem;
+	font-weight: 400;
+	visibility: collapse;
 }
 
 #clock {
-    font-size: 3.5rem;
-    font-weight: 600;
-    visibility: collapse;
+	font-size: 3.5rem;
+	font-weight: 600;
+	visibility: collapse;
 }
 
 #weather {
-    width: 30%;
-    background-color: #282a36;
-    padding: 1.2em;
-    border-radius: 3px;
-    font-size: 100%;
-    text-align: center;
-    margin-bottom: 0;
-    visibility: collapse;
+	width: 30%;
+	background-color: #282a36;
+	padding: 1.2em;
+	border-radius: 3px;
+	font-size: 100%;
+	text-align: center;
+	margin-bottom: 0;
+	visibility: collapse;
 }
 
 .inline {
-    display: inline-block;
-    font-size: 1.2em;
+	display: inline-block;
+	font-size: 1.2em;
 }
 
 #search {
-    font-family: "Fira Code", monospace;
-    font-size: 2rem;
-    width: 100%;
-    height: 100vh;
-    background-color: #282a36;
-    display: none;
-    position: absolute;
-    box-sizing: border-box;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	font-family: "Fira Code", monospace;
+	font-size: 2rem;
+	width: 100%;
+	height: 100vh;
+	background-color: #282a36;
+	display: none;
+	position: absolute;
+	box-sizing: border-box;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 #promptline {
-    width: 80%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+	width: 80%;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 }
 
 .prompt {
-    color: #212121;
-    background: #bd93f9;
-    padding: 0px 10px;
+	color: #212121;
+	background: #bd93f9;
+	padding: 0px 10px;
 }
 
 .directory {
-    color: #fa8072;
-    background: #282a36;
-    padding: 0px 10px;
-    margin: 0em -0.5em;
+	color: #fa8072;
+	background: #282a36;
+	padding: 0px 10px;
+	margin: 0em -0.5em;
 }
 
 #arrowimg {
@@ -91,72 +91,65 @@ body {
 }
 
 #search-field {
-    font-family: "Fira Code", monospace;
-    font-size: 2rem;
-    width: 90%;
-    padding: 0px 10px;
-    box-sizing: border-box;
-    background-color: #282a36;
-    border: solid 0px #282a36;
-    color: #f2f2f2;
-    outline: none;
-    border-radius: 3px;
+	font-family: "Fira Code", monospace;
+	font-size: 2rem;
+	width: 90%;
+	padding: 0px 10px;
+	box-sizing: border-box;
+	background-color: #282a36;
+	border: solid 0px #282a36;
+	color: #f2f2f2;
+	outline: none;
+	border-radius: 3px;
 }
 
 .bookmark-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 70%;
-    margin: 1em 0em;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 70%;
+	margin: 1em 0em;
 }
 
 @media only screen and (max-width: 960px) {
-    .container {
-        height: auto;
-    }
-    #clock {
-        margin-top: 1em;
-    }
-    .container > .bookmark-container {
-        flex-direction: column;
-        width: 60%;
-    }
-    .bookmark-container > bookmark-set {
-        width: auto;
-        margin: 1em 0em;
-    }
+	.container > .bookmark-container {
+		flex-wrap: wrap;
+		width: 60%;
+	}
+	.bookmark-container > bookmark-set {
+		margin: 1em 1em;
+	}
 }
 
 bookmark-set {
-    padding: 1em;
-    background-color: #282a36;
-    border-radius: 3px;
-    font-family: "Roboto Mono";
-    font-size: .85rem;
-    width: 13em;
-    height: 11.5em;
-    margin: 0em .5em;
+	padding: 1em;
+	background-color: #282a36;
+	border-radius: 3px;
+	font-family: "Roboto Mono";
+	font-size: .85rem;
+	width: 13em;
+	height: 11.5em;
+	margin: 0em .5em;
 }
 
 .bookmark-inner-container {
-    /* turn this on if you want scroll */
-    /*overflow-y: scroll;*/
-    height: 80%;
-    vertical-align: top;
+	/* turn this on if you want scroll */
+	/*overflow-y: scroll;*/
+	height: 80%;
+	vertical-align: top;
 }
 .bookmark-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #fff;
-    margin: 0em 0em .35em 0em;
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: #fff;
+	margin: 0em 0em .35em 0em;
 }
 .bookmark {
-    text-decoration: none;
-    color: #f8f8f2;
-    display:block;
-    margin: .5em 0em;
+	text-decoration: none;
+	color: #f8f8f2;
+	display:block;
+	margin: .5em 0em;
 }
 .bookmark:hover {
-    color: #d37961;
+	color: #d37961;
 }
