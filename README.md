@@ -41,6 +41,15 @@ This is a list of ```square```, which is essentially a collection of links group
 	}
 ```
 
+### searchConf
+This is a ```JSON``` of the form
+```javascript
+	{ 
+		"enableSearch": /*boolean for search display*/, 
+		"searchEngines": /*list of search engines, see [below](#searchengines)*/
+	}
+```
+
 ### searchEngines
 A list of your search engines of choice. Each search engine item to be displayed in the search UI is of the form
 ```javascript
@@ -59,6 +68,7 @@ This is a ```JSON``` of the form
 ```javascript
 	{ 
 		"enableDate": /*boolean for date display*/, 
+		"enableTime": /*boolean for time display*/, 
 		"locale": /*string of date-time locale*/, 
 		"options": /*Intl.dateTimeFormatOptions for additional options*/
 	}
@@ -67,7 +77,8 @@ This is a ```JSON``` of the form
 ### weatherConf
 This is a ```JSON``` of the form
 ```javascript
-	{ 
+	{
+		"enableWeather": /*boolean for weather display*/, 
 		"lat": /*string for lattitude*/,
 		"lon": /*string for longtitude*/,
 		"units": /*metric or imperial unit*/,

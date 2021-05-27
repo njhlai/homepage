@@ -2,8 +2,9 @@
 	"manifest_version": 2,
 	"name": "minimal-dark-homepage",
 	"short_name": "homepage",
-	"version": "2.0.2",
+	"version": "2.0.3",
 	"description": "Overrides the browser's newtab page with a custom homepage.",
+	"homepage_url": "https://github.com/njhlai/homepage",
 	"author": "njhlai",
 	"icons": {
 		"64": "img/128.png"
