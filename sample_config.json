@@ -52,19 +52,24 @@
 			]
 		}
 	],
-	"searchEngines": [
-		{
-			"engine": "Google",
-			"query": "https://www.google.com/search?q="
-		},
-		{
-			"engine": "DuckDuckGo",
-			"query": "https://duckduckgo.com/?q="
-		}
-	],
+	"searchConf": {
+		"enableSearch": true,
+		"searchEngines": [
+			{
+				"engine": "Google",
+				"query": "https://www.google.com/search?q="
+			},
+			{
+				"engine": "DuckDuckGo",
+				"query": "https://duckduckgo.com/?q="
+			}
+		]
+	}
+	,
 	"enableLocation": false,
 	"timeConf": { 
 		"enableDate": true, 
+		"enableTime": true,
 		"locale": "en-US", 
 		"options": { 
 			"weekday": "long", 
@@ -74,6 +79,7 @@
 		} 
 	},
 	"weatherConf": {
+		"enableWeather": true,
 		"lat": "90",
 		"lon": "135",
 		"units": "metric",

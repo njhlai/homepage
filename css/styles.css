@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap");
 
 body {
-    background-color: #101010;
+    background-color: #212121;
     margin: 0px;
 }
 
@@ -15,8 +15,7 @@ body {
     flex-direction: column;
 }
 
-.time-display {
-    font-family: sans-serif;
+.display {
     font-family: "Roboto Mono";
     color: #fff;
     margin-bottom: .25em;
@@ -25,11 +24,29 @@ body {
 #calendar {
     font-size: 1.5rem;
     font-weight: 400;
+    visibility: collapse;
 }
 
 #clock {
     font-size: 3.5rem;
     font-weight: 600;
+    visibility: collapse;
+}
+
+#weather {
+    width: 30%;
+    background-color: #282a36;
+    padding: 1.2em;
+    border-radius: 3px;
+    font-size: 100%;
+    text-align: center;
+    margin-bottom: 0;
+    visibility: collapse;
+}
+
+.inline {
+    display: inline-block;
+    font-size: 1.2em;
 }
 
 #search {
@@ -37,7 +54,7 @@ body {
     font-size: 2rem;
     width: 100%;
     height: 100vh;
-    background-color: #212121;
+    background-color: #282a36;
     display: none;
     position: absolute;
     box-sizing: border-box;
@@ -54,14 +71,14 @@ body {
 }
 
 .prompt {
-    color: #101010;
+    color: #212121;
     background: #bd93f9;
     padding: 0px 10px;
 }
 
 .directory {
     color: #fa8072;
-    background: #212121;
+    background: #282a36;
     padding: 0px 10px;
     margin: 0em -0.5em;
 }
@@ -79,26 +96,11 @@ body {
     width: 90%;
     padding: 0px 10px;
     box-sizing: border-box;
-    background-color: #212121;
-    border: solid 0px #212121;
+    background-color: #282a36;
+    border: solid 0px #282a36;
     color: #f2f2f2;
     outline: none;
     border-radius: 3px;
-}
-
-.weather-container {
-    width: 30%;
-    background-color: #212121;
-    padding: 1.2em;
-    border-radius: 3px;
-    font-family: "Roboto Mono";
-    font-size: 100%;
-    color: #fff;
-    text-align: center;
-}
-.inline {
-    display: inline-block;
-    font-size: 1.2em;
 }
 
 .bookmark-container {
@@ -128,7 +130,7 @@ body {
 
 bookmark-set {
     padding: 1em;
-    background-color: #212121;
+    background-color: #282a36;
     border-radius: 3px;
     font-family: "Roboto Mono";
     font-size: .85rem;
@@ -151,10 +153,10 @@ bookmark-set {
 }
 .bookmark {
     text-decoration: none;
-    color: #8c8c8b;
+    color: #f8f8f2;
     display:block;
     margin: .5em 0em;
 }
 .bookmark:hover {
-    color: #fff;
+    color: #d37961;
 }

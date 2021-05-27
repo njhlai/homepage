@@ -22,11 +22,13 @@ export interface option {
 
 export interface timeData {
     enableDate: boolean; 
+    enableTime: boolean;
     locale: string; 
     options: Intl.DateTimeFormatOptions;
 }
 
 export interface weatherData {
+    enableWeather: boolean;
     lat: string;
     lon: string;
     units: string;
@@ -38,10 +40,15 @@ export interface searchEngine {
     query: string;
 }
 
+export interface searchConf {
+    enableSearch: boolean;
+    searchEngines: searchEngine[];
+}
+
 export interface configData {
     username: string;
 	squares: square[];
-	searchEngines: searchEngine[];
+	searchConf: searchConf;
     enableLocation: boolean;
 	timeConf: timeData;
 	weatherConf: weatherData;
