@@ -38,7 +38,7 @@ document.addEventListener('keydown', function(event)  {
 		engines.push(engines.shift()!);
 
 		// update search directory
-		searchdirectory.innerHTML = '~/browser/search/' + engines[0].engine;
+		searchdirectory.innerText = '~/browser/search/' + engines[0].engine;
 	} else {
 		var inp = String.fromCharCode(event.keyCode);
 		ignore = ignore || event.altKey || event.ctrlKey || event.metaKey;
@@ -89,8 +89,8 @@ function displayWeather(weatherConf: weatherData) {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
 				let json = JSON.parse(xhr.responseText);
-				temp.innerHTML = json.main.temp.toFixed(0) + " C";
-				weatherDesc.innerHTML = json.weather[0].description;
+				temp.innerText = json.main.temp.toFixed(0) + " C";
+				weatherDesc.innerText = json.weather[0].description;
 			} else {
 				console.log('error msg: ' + xhr.status);
 			}
@@ -104,18 +104,18 @@ function parseAndCreate(confData: configData) {
 	// Set the date
 	if (confData.timeConf.enableDate) {
 		let date = new Date();
-		calendar.innerHTML = date.toLocaleString(confData.timeConf.locale, confData.timeConf.options);
+		calendar.innerText = date.toLocaleString(confData.timeConf.locale, confData.timeConf.options);
 		calendar.style.visibility = 'visible';
 	}
 
 	// Set up the clock
 	if (confData.timeConf.enableTime) {
-		clock.innerHTML = getTime();
+		clock.innerText = getTime();
 		clock.style.visibility = 'visible';
 
 		// Set clock interval to tick clock
 		setInterval( () => {
-			clock.innerHTML = getTime();
+			clock.innerText = getTime();
 		},100);
 	}
 
@@ -133,13 +133,13 @@ function parseAndCreate(confData: configData) {
 	// Set up search page
 	if (confData.searchConf.enableSearch) {
 		// Set up the search prompt
-		searchprompt.innerHTML = confData.username + '@Homepage';
+		searchprompt.innerText = confData.username + '@Homepage';
 
 		// Set list of search engines
 		engines = confData.searchConf.searchEngines;
 
 		// Set search directory
-		searchdirectory.innerHTML = '~/browser/search/' + engines[0].engine;
+		searchdirectory.innerText = '~/browser/search/' + engines[0].engine;
 	}
 }
 
