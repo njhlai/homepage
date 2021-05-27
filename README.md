@@ -78,7 +78,7 @@ This is a ```JSON``` of the form
 This is a ```JSON``` of the form
 ```javascript
 	{
-		"enableWeather": /*boolean for weather display*/, 
+		"enableWeather": /*boolean for weather display*/,
 		"lat": /*string for lattitude*/,
 		"lon": /*string for longtitude*/,
 		"units": /*metric or imperial unit*/,
