@@ -119,6 +119,10 @@ body {
 	.bookmark-container > bookmark-set {
 		margin: 1em 1em;
 	}
+
+	#weather {
+		width: auto;
+	}
 }
 
 bookmark-set {
