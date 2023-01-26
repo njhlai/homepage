@@ -16,14 +16,14 @@ export interface square {
 export interface option {
     weekday: string;
     year: string;
-    month: string; 
+    month: string;
     day: string;
 }
 
 export interface timeData {
-    enableDate: boolean; 
+    enableDate: boolean;
     enableTime: boolean;
-    locale: string; 
+    locale: string;
     options: Intl.DateTimeFormatOptions;
 }
 

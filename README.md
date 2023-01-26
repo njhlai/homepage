@@ -51,9 +51,9 @@ Your display name. This is used in the search UI.
 ### squares
 This is a list of ```square```, which is essentially a collection of links group by its title, which are of the form
 ```javascript
-	{ 
-		"title": /*title of square*/, 
-		"color": /*hexcode of color of title*/, 
+	{
+		"title": /*title of square*/,
+		"color": /*hexcode of color of title*/,
 		"links": [/*list of links*/]
 	}
 ```
@@ -61,8 +61,8 @@ This is a list of ```square```, which is essentially a collection of links group
 ### searchConf
 This is a ```JSON``` of the form
 ```javascript
-	{ 
-		"enableSearch": /*boolean for search display*/, 
+	{
+		"enableSearch": /*boolean for search display*/,
 		"searchEngines": /*list of search engines, see [below](#searchengines)*/
 	}
 ```
@@ -70,8 +70,8 @@ This is a ```JSON``` of the form
 ### searchEngines
 A list of your search engines of choice. Each search engine item to be displayed in the search UI is of the form
 ```javascript
-	{ 
-		"engine": /*name of serach engine*/, 
+	{
+		"engine": /*name of serach engine*/,
 		"query": /*query url*/
 	}
 ```
@@ -83,10 +83,10 @@ A ```boolean``` which indicates geolocation. No feature currently associated to 
 ### timeConf
 This is a ```JSON``` of the form
 ```javascript
-	{ 
-		"enableDate": /*boolean for date display*/, 
-		"enableTime": /*boolean for time display*/, 
-		"locale": /*string of date-time locale*/, 
+	{
+		"enableDate": /*boolean for date display*/,
+		"enableTime": /*boolean for time display*/,
+		"locale": /*string of date-time locale*/,
 		"options": /*Intl.dateTimeFormatOptions for additional options*/
 	}
 ```

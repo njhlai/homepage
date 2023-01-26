@@ -7,7 +7,7 @@
 	"homepage_url": "https://github.com/njhlai/homepage",
 	"author": "njhlai",
 	"icons": {
-		"528": "img/528.png"
+		"528": "img/icon.png"
 	},
 	"chrome_url_overrides": {
 		"newtab": "index.html"

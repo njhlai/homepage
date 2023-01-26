@@ -1,53 +1,53 @@
 {
 	"username": "YourName",
 	"squares": [
-		{ 
-			"title" : "Media", 
-			"color": "#4dd0e1", 
+		{
+			"title" : "Media",
+			"color": "#4dd0e1",
 			"links": [
-				{ 
-					"name": "Spotify", 
-					"url": "https://open.spotify.com/" 
+				{
+					"name": "Spotify",
+					"url": "https://open.spotify.com/"
 				},
-				{ 
-					"name": "YoutubeMusic", 
-					"url": "https://music.youtube.com/" 
+				{
+					"name": "YoutubeMusic",
+					"url": "https://music.youtube.com/"
 				},
-				{ 
-					"name": "Netflix", 
-					"url": "https://netflix.com" 
+				{
+					"name": "Netflix",
+					"url": "https://netflix.com"
 				},
-				{ 
-					"name": "Youtube", 
-					"url": "https://youtube.com" 
+				{
+					"name": "Youtube",
+					"url": "https://youtube.com"
 				}
 			]
 		},
-		{ 
-			"title": "Dev", 
-			"color": "#f06292", 
+		{
+			"title": "Dev",
+			"color": "#f06292",
 			"links": [
-				{ 
-					"name": "GitHub", 
-					"url": "https://github.com/" 
+				{
+					"name": "GitHub",
+					"url": "https://github.com/"
 				},
-				{ 
-					"name": "GitLab", 
-					"url": "https://gitlab.com/" 
+				{
+					"name": "GitLab",
+					"url": "https://gitlab.com/"
 				},
-				{ 
-					"name": "LocalHost", 
-					"url": "localhost:8000" 
+				{
+					"name": "LocalHost",
+					"url": "localhost:8000"
 				}
 			]
 		},
-		{ 
-			"title": "Template", 
-			"color": "#fff", 
+		{
+			"title": "Template",
+			"color": "#fff",
 			"links": [
-				{ 
-					"name": "Google", 
-					"url": "https://google.com/" 
+				{
+					"name": "Google",
+					"url": "https://google.com/"
 				}
 			]
 		}
@@ -67,16 +67,16 @@
 	}
 	,
 	"enableLocation": false,
-	"timeConf": { 
-		"enableDate": true, 
+	"timeConf": {
+		"enableDate": true,
 		"enableTime": true,
-		"locale": "en-US", 
-		"options": { 
-			"weekday": "long", 
-			"year": "numeric", 
-			"month": "long", 
-			"day": "numeric" 
-		} 
+		"locale": "en-US",
+		"options": {
+			"weekday": "long",
+			"year": "numeric",
+			"month": "long",
+			"day": "numeric"
+		}
 	},
 	"weatherConf": {
 		"enableWeather": true,

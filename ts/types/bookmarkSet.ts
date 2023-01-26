@@ -11,7 +11,7 @@ export class bookmarkSet extends HTMLElement {
         // Could also create a template in js once, and set innerHtml.  That'll move it into this file.
         const template = document.getElementById('bookmarkTemplate') as HTMLTemplateElement;
 
-        // create shadow DOM 
+        // create shadow DOM
         const shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.appendChild(template.content.cloneNode(true));
 
@@ -39,7 +39,7 @@ export class bookmarkSet extends HTMLElement {
                     elChild.append(url);
                 }
             }
-            
+
             this.append(el);
             this.append(elChild);
         }
@@ -58,7 +58,7 @@ export class bookmarkSet extends HTMLElement {
             unrolledList.push({
                 name: link.text,
                 url: link.href
-            }); 
+            });
         }
         return unrolledList;
     }

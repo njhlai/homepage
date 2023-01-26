@@ -42,7 +42,7 @@ document.addEventListener('keydown', function(event)  {
 	} else {
 		var inp = String.fromCharCode(event.keyCode);
 		ignore = ignore || event.altKey || event.ctrlKey || event.metaKey;
-		if (/[a-zA-Z0-9-_ ]/.test(inp) && !ignore) {  
+		if (/[a-zA-Z0-9-_ ]/.test(inp) && !ignore) {
 			// detect typing to open search
 			searcher.style.display = 'flex';
 			searchField.focus();
@@ -73,9 +73,9 @@ function getTime() {
 		min = date.getMinutes(),
 		sec = date.getSeconds(),
 		hour = date.getHours();
-	return "" + 
-		(hour < 10 ? ("0" + hour) : hour) + ":" + 
-		(min < 10 ? ("0" + min) : min) + ":" + 
+	return "" +
+		(hour < 10 ? ("0" + hour) : hour) + ":" +
+		(min < 10 ? ("0" + min) : min) + ":" +
 		(sec < 10 ? ("0" + sec) : sec);
 }
 

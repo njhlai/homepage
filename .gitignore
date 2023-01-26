@@ -1,5 +1,5 @@
 config.json
 js/*
-img/528.png
+img/*.png
 web-ext-artifacts/*
 .web-extension-id
