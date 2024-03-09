@@ -1,16 +1,12 @@
-// Type definitions for configDataStructs
-// Project: homepage
-// Definitions by: njhlai
-
 export interface linkEntry {
-	name: string;
-	url: string;
+    name: string;
+    url: string;
 }
 
 export interface square {
-	title: string;
+    title: string;
     color: string;
-	links: linkEntry[];
+    links: linkEntry[];
 }
 
 export interface option {
@@ -47,9 +43,9 @@ export interface searchConf {
 
 export interface configData {
     username: string;
-	squares: square[];
-	searchConf: searchConf;
+    squares: square[];
+    searchConf: searchConf;
     enableLocation: boolean;
-	timeConf: timeData;
-	weatherConf: weatherData;
+    timeConf: timeData;
+    weatherConf: weatherData;
 }

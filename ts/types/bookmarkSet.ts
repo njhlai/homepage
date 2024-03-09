@@ -1,39 +1,34 @@
-// Type definitions for bookmarkSet
-// Project: homepage
-// Definitions by: njhlai
-
-// import required interfaces
-import {linkEntry, square} from './configDataStructs.js'
+import { linkEntry, square } from "./configDataStructs.js";
 
 export class bookmarkSet extends HTMLElement {
-    constructor(data?: square) {
+    constructor(data: square) {
         super();
         // Could also create a template in js once, and set innerHtml.  That'll move it into this file.
-        const template = document.getElementById('bookmarkTemplate') as HTMLTemplateElement;
+        const template = document.getElementById("bookmarkTemplate") as HTMLTemplateElement;
 
         // create shadow DOM
-        const shadowRoot = this.attachShadow({mode: 'open'});
+        const shadowRoot = this.attachShadow({ mode: "open" });
         shadowRoot.appendChild(template.content.cloneNode(true));
 
         if (data?.title) {
-            let el = document.createElement('span');
-            el.slot = 'bookmark-title';
+            const el = document.createElement("span");
+            el.slot = "bookmark-title";
             el.append(data.title);
             el.style.color = data.color;
 
-            const elChild = document.createElement('span');
-            elChild.slot = 'bookmark-inner-container';
+            const elChild = document.createElement("span");
+            elChild.slot = "bookmark-inner-container";
 
-            if (data?.links!.length) {
-                el.addEventListener('click', function(event){
-                    for (let link of data!.links) {
+            if (data.links.length) {
+                el.addEventListener("click", function () {
+                    for (const link of data.links) {
                         console.log(link.url); // how to open multiple links?
                     }
                 });
 
-                for (let link of data!.links) {
-                    let url = document.createElement('a');
-                    url.classList.add('bookmark');
+                for (const link of data.links) {
+                    const url = document.createElement("a");
+                    url.classList.add("bookmark");
                     url.append(link.name);
                     url.href = link.url;
                     elChild.append(url);
@@ -50,16 +45,19 @@ export class bookmarkSet extends HTMLElement {
     }
 
     get links(): linkEntry[] {
-        let listLinks = this.querySelector('[slot="bookmark-inner-container"]')!;
-        let unrolledList = [];
+        const listLinks = this.querySelector('[slot="bookmark-inner-container"]');
+        const unrolledList = [];
 
-        for (const child of listLinks.children) {
-            let link = child as HTMLAnchorElement;
-            unrolledList.push({
-                name: link.text,
-                url: link.href
-            });
+        if (listLinks) {
+            for (const child of listLinks.children) {
+                const link = child as HTMLAnchorElement;
+                unrolledList.push({
+                    name: link.text,
+                    url: link.href,
+                });
+            }
         }
+
         return unrolledList;
     }
 }

@@ -1,11 +1,10 @@
 {
     "compilerOptions": {
-        "outDir": "./js",
+        "outDir": "js",
         "target": "es6",
         "strict": true,
         "strictNullChecks": true,
         "forceConsistentCasingInFileNames": true,
-        "noEmit": true,
         "incremental": true,
         "isolatedModules": true,
     },
