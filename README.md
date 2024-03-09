@@ -10,31 +10,41 @@ The code for this project is modified heavily from:
 - [Jaredk3nt/homepage](https://github.com/Jaredk3nt/homepage): Providing the base look of the page
 - [deepjyoti30/startpage](https://github.com/deepjyoti30/startpage/): Providing the base for chrome extension
 
+## Requirements
+- [nvm](https://github.com/nvm-sh/nvm)
+- [npm](https://www.npmjs.com/)
+
+## Setup
+Setup the project by running:
+```sh
+nvm install && npm install
+```
+
 ## Installation
-You can install this both on Chrome and Firefox (requires [web-ext](https://github.com/mozilla/web-ext)).
+You can install this both on Chrome and Firefox.
 
 ### Chrome
 - Get the latest release (zip) or clone this repo and extract it.
-- Write the `config.json` for the configuration of the homepage, based on the template provided in  [sample_config.json](https://github.com/njhlai/homepage/blob/master/sample_config.json).
+- Write the `config.json` for the configuration of the homepage, based on the template provided in [sample_config.json](https://github.com/njhlai/homepage/blob/master/sample_config.json).
 - Add an `icon.png` of your choice into `img/`.
 - Compile the TypeScripts in `ts/` by running:
 ```sh
-cd ts/ ; tsc
+npm run compile
 ```
 - On chrome, open extensions from the tool menu or open it from [chrome://extensions](chrome://extensions).
 - Click on load unpacked, navigate to the directory where you cloned the repo and select it.
 
 ### Firefox
 - Get the latest release (zip) or clone this repo and extract it.
-- Write the `config.json` for the configuration of the homepage, based on the template provided in  [sample_config.json](https://github.com/njhlai/homepage/blob/master/sample_config.json).
+- Write the `config.json` for the configuration of the homepage, based on the template provided in [sample_config.json](https://github.com/njhlai/homepage/blob/master/sample_config.json).
 - Add an `icon.png` of your choice into `img/`.
 - Compile the TypeScripts in `ts/` by running:
 ```sh
-cd ts/ ; tsc
+npm run compile
 ```
 - Build using `web-ext`, which will create a zip file in `web-ext-artifacts/`:
 ```sh
-web-ext build --ignore-files ts/ sample_config.json README.md
+npm run build
 ```
 - You can now load this by navigating to the [about:debugging](about:debugging), click on "This Firefox", click on "Load Temporary Add-on..." and select the zip file from the step before, in `web-ext-artifacts/`. This will load the extension for the current session only.
 - To have this more permenantly, you'll need to sign it using `web-ext`. See [here](https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/#using-web-ext-section).
