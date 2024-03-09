@@ -18,6 +18,7 @@ customElements.define("bookmark-set", bookmarkSet);
 
 // all other required global variables
 let ignore = false;
+let searchIgnore = false;
 let engines: searchEngine[] = [];
 
 // Event listener to open search/change search engine
@@ -34,10 +35,9 @@ document.addEventListener("keydown", function (event) {
             searchdirectory.innerText = "~/browser/search/" + engines[0].engine;
         }
     } else {
-        const inp = String.fromCharCode(event.keyCode);
-        ignore = ignore || event.altKey || event.ctrlKey || event.metaKey;
-        if (/[a-zA-Z0-9-_ ]/.test(inp) && !ignore) {
-            // detect typing to open search
+        ignore = ignore || searchIgnore || event.altKey || event.ctrlKey || event.metaKey;
+
+        if (!ignore && /(Digit)|(Key)/.test(event.code)) {
             searcher.style.display = "flex";
             searchField.focus();
         }
@@ -45,7 +45,7 @@ document.addEventListener("keydown", function (event) {
 });
 
 document.addEventListener("keyup", function () {
-    ignore = false;
+    ignore = searchIgnore;
 });
 
 // Search on enter key event
@@ -85,6 +85,7 @@ function displayWeather(weatherConf: weatherData) {
             weatherConf.units +
             "&appid=" +
             weatherConf.appid,
+        true,
     );
     xhr.onload = () => {
         if (xhr.readyState === 4) {
@@ -139,6 +140,8 @@ function parseAndCreate(confData: configData) {
         searchprompt.innerText = confData.username + "@Homepage";
         engines = confData.searchConf.searchEngines;
         searchdirectory.innerText = "~/browser/search/" + engines[0].engine;
+    } else {
+        searchIgnore = true;
     }
 }
 
