@@ -1,18 +1,18 @@
 {
-	"manifest_version": 2,
-	"name": "minimal-dark-homepage",
-	"short_name": "homepage",
-	"version": "2.0.5",
-	"description": "Overrides the browser's newtab page with a custom homepage.",
-	"homepage_url": "https://github.com/njhlai/homepage",
-	"author": "njhlai",
-	"icons": {
-		"528": "img/icon.png"
-	},
-	"chrome_url_overrides": {
-		"newtab": "index.html"
-	},
-	"chrome_settings_overrides" : {
-		"homepage": "index.html"
-	}
+    "manifest_version": 2,
+    "name": "minimal-dark-homepage",
+    "short_name": "homepage",
+    "version": "2.0.5",
+    "description": "Overrides the browser's newtab page with a custom homepage.",
+    "homepage_url": "https://github.com/njhlai/homepage",
+    "author": "njhlai",
+    "icons": {
+        "528": "img/icon.png"
+    },
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "chrome_settings_overrides" : {
+        "homepage": "index.html"
+    }
 }

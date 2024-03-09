@@ -5,14 +5,16 @@
   "scripts": {
     "lint": "eslint ts",
     "fmt": "prettier --check ts",
-    "build": "tsc --removeComments",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "tsc --removeComments",
+    "build": "web-ext build --ignore-files node_modules/ ts/ js/tsconfig.tsbuildinfo .*rc* package* sample_config.json tsconfig.json README.md",
+    "test": "web-ext run --source-dir ."
   },
   "author": "njhlai <nicholasjhlai@gmail.com>",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
     "eslint": "^8.57.0",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "web-ext": "^7.11.0"
   }
 }
