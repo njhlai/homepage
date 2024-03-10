@@ -9,6 +9,10 @@
     "icons": {
         "528": "img/icon.png"
     },
+    "options_ui": {
+        "page": "option.html",
+        "browser_style": true
+    },
     "chrome_url_overrides": {
         "newtab": "index.html"
     },

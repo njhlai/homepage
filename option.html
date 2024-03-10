@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <form>
+            <div>
+                <label> Username: <input type="text" id="username" /></label>
+            </div>
+            <br />
+            <div>
+                <label> List of Url (in JSON): </label>
+                <textarea rows="5" cols="70" id="squares"> </textarea>
+            </div>
+            <br />
+            <div>
+                <div>
+                    <label> Search <input type="checkbox" id="enableSearch" /></label>
+                </div>
+                <div id="search">
+                    <label> List of Search Engines (in JSON): </label>
+                    <textarea rows="5" cols="70" id="engines"> </textarea>
+                </div>
+            </div>
+            <br />
+            <div>
+                <label> Use Location <input type="checkbox" id="enableLocation" /></label>
+            </div>
+            <br />
+            <div>
+                <div>
+                    <label> Time <input type="checkbox" id="enableTime" /></label>
+                    <label> Date <input type="checkbox" id="enableDate" /></label>
+                </div>
+                <div id="date">
+                    <div>
+                        <label> Locale: <input type="text" id="locale" /></label>
+                    </div>
+                    <div>
+                        <label> Format Options: </label>
+                        <div>
+                            <label>
+                                Weekday:
+                                <select class="form-select" id="optionWeekday">
+                                    <option>weekday</option>
+                                    <option value="long">long</option>
+                                    <option value="short">short</option>
+                                    <option value="narrow">narrow</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                Year:
+                                <select class="form-select" id="optionYear">
+                                    <option>year</option>
+                                    <option value="numeric">numeric</option>
+                                    <option value="2-digit">2-digit</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                Month:
+                                <select class="form-select" id="optionMonth">
+                                    <option>year</option>
+                                    <option value="numeric">numeric</option>
+                                    <option value="2-digit">2-digit</option>
+                                    <option value="long">long</option>
+                                    <option value="short">short</option>
+                                    <option value="narrow">narrow</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                Day:
+                                <select class="form-select" id="optionDay">
+                                    <option>year</option>
+                                    <option value="numeric">numeric</option>
+                                    <option value="2-digit">2-digit</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div>
+                <div>
+                    <label> Weather <input type="checkbox" id="enableWeather" /></label>
+                </div>
+                <div id="weather">
+                    <div>
+                        <label> AppId: <input type="text" id="appid" /></label>
+                    </div>
+                    <div>
+                        <label> Lat: <input type="text" id="lat" /></label>
+                    </div>
+                    <div>
+                        <label> Lon: <input type="text" id="lon" /></label>
+                    </div>
+                    <div>
+                        <label>
+                            Units:
+                            <select class="form-select" id="units">
+                                <option>units</option>
+                                <option value="standard">standard</option>
+                                <option value="metric">metric</option>
+                                <option value="imperial">imperial</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <button type="submit">Save</button>
+        </form>
+
+        <!-- custom JS -->
+        <script type="module" src="js/option.js"></script>
+    </body>
+</html>
