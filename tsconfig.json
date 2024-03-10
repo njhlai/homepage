@@ -1,16 +1,14 @@
 {
-  "compilerOptions": {
-    "outDir": "js",
-    "target": "es6",
-    "allowJs": false,
-    "skipLibCheck": true,
-    "strict": true,
-    "strictNullChecks": true,
-    "forceConsistentCasingInFileNames": true,
-    "incremental": true,
-    "isolatedModules": true,
-  },
-  "include": [
-    "ts/**/*.ts"
-  ]
+    "compilerOptions": {
+        "outDir": "js",
+        "target": "es6",
+        "allowJs": false,
+        "skipLibCheck": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "forceConsistentCasingInFileNames": true,
+        "incremental": true,
+        "isolatedModules": true
+    },
+    "include": ["ts/**/*.ts"]
 }
