@@ -1,4 +1,4 @@
-import { weatherData, searchEngine, configData } from "./types/configDataStructs.js";
+import { weatherConf, searchEngine, configData } from "./types/configDataStructs.js";
 import { bookmarkSet } from "./types/bookmarkSet.js";
 
 // grab required HTMLElements
@@ -21,7 +21,7 @@ let ignore = false;
 let searchIgnore = false;
 let engines: searchEngine[] = [];
 
-// Event listener to open search/change search engine
+// Open search/change search engine
 document.addEventListener("keydown", function (event) {
     if (event.code == "Escape") {
         searchField.value = "";
@@ -71,7 +71,7 @@ function getTime() {
 }
 
 // Get weather information
-function displayWeather(weatherConf: weatherData) {
+function displayWeather(weatherConf: weatherConf) {
     const xhr = new XMLHttpRequest();
 
     // Request to open weather map

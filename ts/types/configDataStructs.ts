@@ -16,19 +16,19 @@ export interface option {
     day: string;
 }
 
-export interface timeData {
+export interface timeConf {
     enableDate: boolean;
     enableTime: boolean;
-    locale: string;
+    locale: Intl.LocalesArgument;
     options: Intl.DateTimeFormatOptions;
 }
 
-export interface weatherData {
+export interface weatherConf {
     enableWeather: boolean;
+    appid: string;
     lat: string;
     lon: string;
     units: string;
-    appid: string;
 }
 
 export interface searchEngine {
@@ -46,6 +46,6 @@ export interface configData {
     squares: square[];
     searchConf: searchConf;
     enableLocation: boolean;
-    timeConf: timeData;
-    weatherConf: weatherData;
+    timeConf: timeConf;
+    weatherConf: weatherConf;
 }

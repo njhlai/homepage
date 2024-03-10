@@ -2,7 +2,7 @@
 	"username": "YourName",
 	"squares": [
 		{
-			"title" : "Media",
+			"title": "Media",
 			"color": "#4dd0e1",
 			"links": [
 				{
@@ -64,8 +64,7 @@
 				"query": "https://duckduckgo.com/?q="
 			}
 		]
-	}
-	,
+	},
 	"enableLocation": false,
 	"timeConf": {
 		"enableDate": true,
@@ -80,9 +79,9 @@
 	},
 	"weatherConf": {
 		"enableWeather": true,
+		"appid": "",
 		"lat": "90",
 		"lon": "135",
-		"units": "metric",
-		"appid": ""
+		"units": "metric"
 	}
 }
