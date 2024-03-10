@@ -147,6 +147,6 @@ function parseAndCreate(confData: configData) {
 }
 
 window.onload = () => {
-    const sessionData = sessionStorage.getItem("confData");
-    sessionData ? parseAndCreate(JSON.parse(sessionData) as configData) : readJSON("config.json", parseAndCreate);
+    const localData = localStorage.getItem("confData");
+    localData ? parseAndCreate(JSON.parse(localData) as configData) : readJSON("config.json", parseAndCreate);
 };
