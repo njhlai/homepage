@@ -1,5 +1,6 @@
 import { weatherConf, searchEngine, configData } from "./types/configDataStructs.js";
 import { bookmarkSet } from "./types/bookmarkSet.js";
+import { readJSON } from "./utils.js";
 
 // grab required HTMLElements
 const searchField = document.getElementById("search-field") as HTMLInputElement;
@@ -145,25 +146,7 @@ function parseAndCreate(confData: configData) {
     }
 }
 
-// Read config files (in JSON)
-function readJSON(fileName: string) {
-    console.log("Initialising first read");
-
-    // Load the data of the passed file.
-    fetch(fileName)
-        .then((response) => {
-            return response.json();
-        })
-        .then((configJSON) => {
-            parseAndCreate(configJSON as configData);
-            sessionStorage.setItem("confData", JSON.stringify(configJSON));
-        })
-        .catch((error) => {
-            console.error("Error:", error);
-        });
-}
-
 window.onload = () => {
     const sessionData = sessionStorage.getItem("confData");
-    sessionData ? parseAndCreate(JSON.parse(sessionData) as configData) : readJSON("config.json");
+    sessionData ? parseAndCreate(JSON.parse(sessionData) as configData) : readJSON("config.json", parseAndCreate);
 };
