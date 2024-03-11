@@ -1,5 +1,5 @@
 import { configData, searchEngine, square } from "./types/configDataStructs.js";
-import { readJSON } from "./utils.js";
+import { readDefaultConfig } from "./utils.js";
 
 // grab required HTMLElements
 const username = document.getElementById("username") as HTMLInputElement;
@@ -49,15 +49,15 @@ function populateOption(confData: configData) {
     lat.value = confData.weatherConf.lat;
     lon.value = confData.weatherConf.lon;
     units.value = confData.weatherConf.units;
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    const localData = localStorage.getItem("confData");
-    localData ? populateOption(JSON.parse(localData) as configData) : readJSON("config.json", populateOption);
 
     search.style.display = enableSearch.checked ? "block" : "none";
     date.style.display = enableDate.checked ? "block" : "none";
     weather.style.display = enableWeather.checked ? "block" : "none";
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const localData = localStorage.getItem("confData");
+    localData ? populateOption(JSON.parse(localData) as configData) : readDefaultConfig(populateOption);
 });
 
 // Toggle search config options

@@ -3,7 +3,6 @@ npm-debug.log
 node_modules/
 package-lock.json
 
-config.json
 js/*
 img/*.png
 web-ext-artifacts/*

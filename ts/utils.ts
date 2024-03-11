@@ -1,19 +1,98 @@
 import { configData } from "./types/configDataStructs.js";
 
-// Read config files (in JSON)
-export function readJSON(fileName: string, populator: (arg0: configData) => void) {
+// Read default config
+export function readDefaultConfig(populator: (arg0: configData) => void) {
     console.log("Initialising first read");
 
-    // Load the data of the passed file using `populator`
-    fetch(fileName)
-        .then((response) => {
-            return response.json();
-        })
-        .then((configJSON) => {
-            populator(configJSON as configData);
-            localStorage.setItem("confData", JSON.stringify(configJSON));
-        })
-        .catch((error) => {
-            console.error("Error:", error);
-        });
+    const defaultConfig = {
+        username: "YourName",
+        squares: [
+            {
+                title: "Media",
+                color: "#4dd0e1",
+                links: [
+                    {
+                        name: "Spotify",
+                        url: "https://open.spotify.com/",
+                    },
+                    {
+                        name: "YoutubeMusic",
+                        url: "https://music.youtube.com/",
+                    },
+                    {
+                        name: "Netflix",
+                        url: "https://netflix.com",
+                    },
+                    {
+                        name: "Youtube",
+                        url: "https://youtube.com",
+                    },
+                ],
+            },
+            {
+                title: "Dev",
+                color: "#f06292",
+                links: [
+                    {
+                        name: "GitHub",
+                        url: "https://github.com/",
+                    },
+                    {
+                        name: "GitLab",
+                        url: "https://gitlab.com/",
+                    },
+                    {
+                        name: "LocalHost",
+                        url: "localhost:8000",
+                    },
+                ],
+            },
+            {
+                title: "Template",
+                color: "#fff",
+                links: [
+                    {
+                        name: "Google",
+                        url: "https://google.com/",
+                    },
+                ],
+            },
+        ],
+        searchConf: {
+            enableSearch: true,
+            searchEngines: [
+                {
+                    engine: "Google",
+                    query: "https://www.google.com/search?q=",
+                },
+                {
+                    engine: "DuckDuckGo",
+                    query: "https://duckduckgo.com/?q=",
+                },
+            ],
+        },
+        enableLocation: false,
+        timeConf: {
+            enableDate: true,
+            enableTime: true,
+            locale: "en-Us",
+            options: {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+            },
+        },
+        weatherConf: {
+            enableWeather: true,
+            appid: "",
+            lat: "90",
+            lon: "135",
+            units: "metric",
+        },
+    } as configData;
+
+    // Load default config using `populator`
+    populator(defaultConfig);
+    localStorage.setItem("confData", JSON.stringify(defaultConfig));
 }

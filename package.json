@@ -6,7 +6,7 @@
         "lint": "eslint ts && web-ext lint --source-dir .",
         "fmt": "prettier --check ts",
         "compile": "tsc",
-        "build": "tsc && web-ext build --ignore-files node_modules/ ts/ js/tsconfig.tsbuildinfo .*rc* package* sample_config.json tsconfig.json README.md",
+        "build": "tsc && web-ext build --ignore-files node_modules/ ts/ js/tsconfig.tsbuildinfo .*rc* {config,sample_config,package*,tsconfig}.json README.md",
         "test": "tsc && web-ext run --source-dir ."
     },
     "author": "njhlai <nicholasjhlai@gmail.com>",

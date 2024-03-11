@@ -1,6 +1,6 @@
 import { weatherConf, searchEngine, configData } from "./types/configDataStructs.js";
 import { bookmarkSet } from "./types/bookmarkSet.js";
-import { readJSON } from "./utils.js";
+import { readDefaultConfig } from "./utils.js";
 
 // grab required HTMLElements
 const searchField = document.getElementById("search-field") as HTMLInputElement;
@@ -148,5 +148,5 @@ function parseAndCreate(confData: configData) {
 
 window.onload = () => {
     const localData = localStorage.getItem("confData");
-    localData ? parseAndCreate(JSON.parse(localData) as configData) : readJSON("config.json", parseAndCreate);
+    localData ? parseAndCreate(JSON.parse(localData) as configData) : readDefaultConfig(parseAndCreate);
 };
