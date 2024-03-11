@@ -50,9 +50,9 @@ function populateOption(confData: configData) {
     lon.value = confData.weatherConf.lon;
     units.value = confData.weatherConf.units;
 
-    search.style.display = enableSearch.checked ? "block" : "none";
-    date.style.display = enableDate.checked ? "block" : "none";
-    weather.style.display = enableWeather.checked ? "block" : "none";
+    search.style.display = enableSearch.checked ? "flex" : "none";
+    date.style.display = enableDate.checked ? "flex" : "none";
+    weather.style.display = enableWeather.checked ? "flex" : "none";
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -62,17 +62,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Toggle search config options
 enableSearch.addEventListener("change", function () {
-    search.style.display = enableSearch.checked ? "block" : "none";
+    search.style.display = enableSearch.checked ? "flex" : "none";
 });
 
 // Toggle date config options
 enableDate.addEventListener("change", function () {
-    date.style.display = enableDate.checked ? "block" : "none";
+    date.style.display = enableDate.checked ? "flex" : "none";
 });
 
 // Toggle weather config options
 enableWeather.addEventListener("change", function () {
-    weather.style.display = enableWeather.checked ? "block" : "none";
+    weather.style.display = enableWeather.checked ? "flex" : "none";
 });
 
 // Save current configuration

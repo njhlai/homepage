@@ -2,87 +2,99 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <style type="text/css">
+            label {
+                width: 20%;
+                text-align: left;
+                display: inline-block;
+            }
+
+            input,
+            select {
+                margin: 0 30% 0 4%;
+            }
+        </style>
     </head>
 
-    <body>
+    <body style="padding: 10px">
         <form>
             <div>
-                <label> Username: <input type="text" id="username" /></label>
+                <label> Username </label>
+                <input type="text" id="username" />
             </div>
             <br />
-            <div>
-                <label> List of Url (in JSON): </label>
+            <div style="display: flex; flex-direction: column">
+                <div>List of Url (in JSON)</div>
                 <textarea rows="5" cols="70" id="squares"> </textarea>
             </div>
             <br />
             <div>
                 <div>
-                    <label> Search <input type="checkbox" id="enableSearch" /></label>
+                    <label> Search </label>
+                    <input type="checkbox" id="enableSearch" />
                 </div>
-                <div id="search">
-                    <label> List of Search Engines (in JSON): </label>
+                <div id="search" style="display: flex; flex-direction: column">
+                    <div>List of Search Engines (in JSON)</div>
                     <textarea rows="5" cols="70" id="engines"> </textarea>
                 </div>
             </div>
             <br />
             <div>
-                <label> Use Location <input type="checkbox" id="enableLocation" /></label>
+                <label> Use Location </label>
+                <input type="checkbox" id="enableLocation" />
             </div>
             <br />
             <div>
                 <div>
-                    <label> Time <input type="checkbox" id="enableTime" /></label>
-                    <label> Date <input type="checkbox" id="enableDate" /></label>
+                    <label> Time </label>
+                    <input type="checkbox" id="enableTime" />
                 </div>
-                <div id="date">
+                <div>
+                    <label> Date </label>
+                    <input type="checkbox" id="enableDate" />
+                </div>
+                <div id="date" style="display: flex; flex-direction: column">
                     <div>
-                        <label> Locale: <input type="text" id="locale" /></label>
+                        <label> Locale </label>
+                        <input type="text" id="locale" />
                     </div>
                     <div>
                         <label> Format Options: </label>
                         <div>
-                            <label>
-                                Weekday:
-                                <select class="form-select" id="optionWeekday">
-                                    <option>weekday</option>
-                                    <option value="long">long</option>
-                                    <option value="short">short</option>
-                                    <option value="narrow">narrow</option>
-                                </select>
-                            </label>
+                            <label style="padding-left: 3%"> Weekday </label>
+                            <select class="form-select" id="optionWeekday">
+                                <option>weekday</option>
+                                <option value="long">long</option>
+                                <option value="short">short</option>
+                                <option value="narrow">narrow</option>
+                            </select>
                         </div>
                         <div>
-                            <label>
-                                Year:
-                                <select class="form-select" id="optionYear">
-                                    <option>year</option>
-                                    <option value="numeric">numeric</option>
-                                    <option value="2-digit">2-digit</option>
-                                </select>
-                            </label>
+                            <label style="padding-left: 3%"> Year </label>
+                            <select class="form-select" id="optionYear">
+                                <option>year</option>
+                                <option value="numeric">numeric</option>
+                                <option value="2-digit">2-digit</option>
+                            </select>
                         </div>
                         <div>
-                            <label>
-                                Month:
-                                <select class="form-select" id="optionMonth">
-                                    <option>year</option>
-                                    <option value="numeric">numeric</option>
-                                    <option value="2-digit">2-digit</option>
-                                    <option value="long">long</option>
-                                    <option value="short">short</option>
-                                    <option value="narrow">narrow</option>
-                                </select>
-                            </label>
+                            <label style="padding-left: 3%"> Month </label>
+                            <select class="form-select" id="optionMonth">
+                                <option>year</option>
+                                <option value="numeric">numeric</option>
+                                <option value="2-digit">2-digit</option>
+                                <option value="long">long</option>
+                                <option value="short">short</option>
+                                <option value="narrow">narrow</option>
+                            </select>
                         </div>
                         <div>
-                            <label>
-                                Day:
-                                <select class="form-select" id="optionDay">
-                                    <option>year</option>
-                                    <option value="numeric">numeric</option>
-                                    <option value="2-digit">2-digit</option>
-                                </select>
-                            </label>
+                            <label style="padding-left: 3%"> Day </label>
+                            <select class="form-select" id="optionDay">
+                                <option>year</option>
+                                <option value="numeric">numeric</option>
+                                <option value="2-digit">2-digit</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -90,28 +102,30 @@
             <br />
             <div>
                 <div>
-                    <label> Weather <input type="checkbox" id="enableWeather" /></label>
+                    <label> Weather </label>
+                    <input type="checkbox" id="enableWeather" />
                 </div>
-                <div id="weather">
+                <div id="weather" style="display: flex; flex-direction: column">
                     <div>
-                        <label> AppId: <input type="text" id="appid" /></label>
+                        <label> AppId </label>
+                        <input type="text" id="appid" />
                     </div>
                     <div>
-                        <label> Lat: <input type="text" id="lat" /></label>
+                        <label> Lat </label>
+                        <input type="text" id="lat" />
                     </div>
                     <div>
-                        <label> Lon: <input type="text" id="lon" /></label>
+                        <label> Lon </label>
+                        <input type="text" id="lon" />
                     </div>
                     <div>
-                        <label>
-                            Units:
-                            <select class="form-select" id="units">
-                                <option>units</option>
-                                <option value="standard">standard</option>
-                                <option value="metric">metric</option>
-                                <option value="imperial">imperial</option>
-                            </select>
-                        </label>
+                        <label> Units </label>
+                        <select class="form-select" id="units">
+                            <option>units</option>
+                            <option value="standard">standard</option>
+                            <option value="metric">metric</option>
+                            <option value="imperial">imperial</option>
+                        </select>
                     </div>
                 </div>
             </div>
