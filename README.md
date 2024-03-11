@@ -3,19 +3,16 @@
 ![preview](.github/captured.gif)
 
 ## About
-This project started off as a copy of [Jaredk3nt/homepage](https://github.com/Jaredk3nt/homepage), modified to my own personal preference. Then, heavily inspired by [deepjyoti30/startpage](https://github.com/deepjyoti30/startpage/), as a practice in TypeScript, and sheer boredom, this project is finally in its current form.
+A Firefox/Chrome newtab override extension written in vanilla [HTML](https://html.spec.whatwg.org/), [CSS](https://www.w3.org/TR/CSS/#css) and [Typescript](https://www.typescriptlang.org/).
 
-### Shoutout
-The code for this project is modified heavily from:
-- [Jaredk3nt/homepage](https://github.com/Jaredk3nt/homepage): Providing the base look of the page
-- [deepjyoti30/startpage](https://github.com/deepjyoti30/startpage/): Providing the base for chrome extension
+This project started off as a copy of [Jaredk3nt/homepage](https://github.com/Jaredk3nt/homepage), modified to my own personal preference, and later evolved into a newtab override extension heavily inspired by [deepjyoti30/startpage](https://github.com/deepjyoti30/startpage/).
 
 ## Requirements
 - [nvm](https://github.com/nvm-sh/nvm)
 - [npm](https://www.npmjs.com/)
 
-## Setup
-Setup the project by running:
+## Setup Dev Environment
+Setup the dev environment for the project by running:
 ```sh
 nvm install && npm install
 ```
@@ -25,18 +22,16 @@ You can install this both on Chrome and Firefox.
 
 ### Chrome
 - Get the latest release (zip) or clone this repo and extract it.
-- Write the `config.json` for the configuration of the homepage, based on the template provided in [sample_config.json](https://github.com/njhlai/homepage/blob/master/sample_config.json).
 - Add an `icon.png` of your choice into `img/`.
 - Compile the TypeScripts in `ts/` by running:
 ```sh
 npm run compile
 ```
-- On chrome, open extensions from the tool menu or open it from [chrome://extensions](chrome://extensions).
-- Click on load unpacked, navigate to the directory where you cloned the repo and select it.
+- On chrome, open extensions from the tool menu or open it from `chrome://extensions`.
+- Click on `load unpacked`, navigate to the directory where you cloned the repo and select it.
 
 ### Firefox
 - Get the latest release (zip) or clone this repo and extract it.
-- Write the `config.json` for the configuration of the homepage, based on the template provided in [sample_config.json](https://github.com/njhlai/homepage/blob/master/sample_config.json).
 - Add an `icon.png` of your choice into `img/`.
 - Compile the TypeScripts in `ts/` by running:
 ```sh
@@ -46,11 +41,14 @@ npm run compile
 ```sh
 npm run build
 ```
-- You can now load this by navigating to the [about:debugging](about:debugging), click on "This Firefox", click on "Load Temporary Add-on..." and select the zip file from the step before, in `web-ext-artifacts/`. This will load the extension for the current session only.
-- To have this more permenantly, you'll need to sign it using `web-ext`. See [here](https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/#using-web-ext-section).
+- You can now load this by navigating to the `about:debugging`, click on `This Firefox`, click on `Load Temporary Add-on...` and select the zip file from the step before, in `web-ext-artifacts/`. This will load the extension for the current session only.
+    - To have this more permenantly, you'll need to sign it using `web-ext`. See [here](https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/#using-web-ext-section).
+- Navigate to `about:addons => minimal-dark-homepage => Preference` to configure the extension.
 
 ## Settings
-Here is a guide to writing your own `config.json`.
+You can configure this extension under `about:addons => minimal-dark-homepage => Preference` and going through each option, or by supplying a JSON string.
+
+Here is a guide to writing your own configuration JSON string. Refer to `example_config.json` (supplying the default configuration) as an example and for more details.
 
 ### username
 Your display name. This is used in the search UI.
@@ -109,3 +107,7 @@ This is a `JSON` of the form
     "appid": "{{ appid of openweathermap.org }}",
 }
 ```
+
+## References
+- The design of the page is heavily based on [Jaredk3nt/homepage](https://github.com/Jaredk3nt/homepage).
+- The initial code to package `homepage` as an extension is heavily based on [deepjyoti30/startpage](https://github.com/deepjyoti30/startpage/).

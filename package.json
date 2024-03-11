@@ -1,7 +1,7 @@
 {
     "name": "minimal-dark-homepage",
-    "version": "2.0.5",
-    "description": "",
+    "version": "2.1.0",
+    "description": "Overrides the browser's newtab page with a custom homepage.",
     "scripts": {
         "lint": "eslint ts && web-ext lint --source-dir .",
         "fmt": "prettier --check ts",
