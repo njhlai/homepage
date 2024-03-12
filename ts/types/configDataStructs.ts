@@ -45,7 +45,6 @@ export interface configData {
     username: string;
     squares: square[];
     searchConf: searchConf;
-    enableLocation: boolean;
     timeConf: timeConf;
     weatherConf: weatherConf;
 }

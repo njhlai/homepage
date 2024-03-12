@@ -9,7 +9,6 @@ const squares = document.getElementById("squares") as HTMLTextAreaElement;
 const enableSearch = document.getElementById("enableSearch") as HTMLInputElement;
 const search = document.getElementById("search") as HTMLElement;
 const engines = document.getElementById("engines") as HTMLTextAreaElement;
-const enableLocation = document.getElementById("enableLocation") as HTMLInputElement;
 const enableDate = document.getElementById("enableDate") as HTMLInputElement;
 const enableTime = document.getElementById("enableTime") as HTMLInputElement;
 const date = document.getElementById("date") as HTMLElement;
@@ -35,8 +34,6 @@ function populateOption(confData: configData) {
     // Populate search options
     enableSearch.checked = confData.searchConf.enableSearch;
     engines.value = JSON.stringify(confData.searchConf.searchEngines, null, 2);
-
-    enableLocation.checked = confData.enableLocation;
 
     // Populate time options
     enableTime.checked = confData.timeConf.enableTime;
@@ -101,7 +98,6 @@ document.querySelector("form")?.addEventListener("submit", function (e: SubmitEv
                   enableSearch: enableSearch.checked,
                   searchEngines: JSON.parse(engines.value) as searchEngine[],
               },
-              enableLocation: enableLocation.checked,
               timeConf: {
                   enableDate: enableDate.checked,
                   enableTime: enableTime.checked,
@@ -122,7 +118,6 @@ document.querySelector("form")?.addEventListener("submit", function (e: SubmitEv
               },
           };
 
-    console.log(JSON.stringify(confData, null, 2));
     populateOption(confData);
     localStorage.setItem("confData", JSON.stringify(confData));
 });

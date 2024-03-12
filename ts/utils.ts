@@ -71,7 +71,6 @@ export function readDefaultConfig(populator: (arg0: configData) => void) {
                 },
             ],
         },
-        enableLocation: false,
         timeConf: {
             enableDate: true,
             enableTime: true,

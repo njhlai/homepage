@@ -22,7 +22,7 @@ export class bookmarkSet extends HTMLElement {
             if (data.links.length) {
                 el.addEventListener("click", function () {
                     for (const link of data.links) {
-                        console.log(link.url); // how to open multiple links?
+                        console.log(link.url);
                     }
                 });
 

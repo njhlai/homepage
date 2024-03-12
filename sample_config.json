@@ -65,7 +65,6 @@
             }
         ]
     },
-    "enableLocation": false,
     "timeConf": {
         "enableDate": true,
         "enableTime": true,
